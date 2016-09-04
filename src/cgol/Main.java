@@ -1,11 +1,7 @@
 package cgol;
-<<<<<<< HEAD
 /*
  * MAIN
  */
-
-=======
->>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 
 public class Main {
 	static int width;
@@ -15,17 +11,18 @@ public class Main {
 		f.setLocationRelativeTo(null);
 		f.setDefaultCloseOperation(3);
 		f.setVisible(true);
-<<<<<<< HEAD
-=======
-		//f.setUndecorated(true);
->>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
+
 		f.setResizable(false);
 		
 		width = f.getWidth();
 		height = f.getHeight();
 		f.createScreen();
-		
+		long lastFrame = System.currentTimeMillis();
 		while(true){
+			long thisFrame = System.currentTimeMillis();
+			float tslf = (float) ((thisFrame - lastFrame) / 1000.0);
+			lastFrame = thisFrame;
+			f.update(tslf);
 			f.repaint();
 			try{
 				Thread.sleep(10);
@@ -34,8 +31,4 @@ public class Main {
 			}
 		}
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 }

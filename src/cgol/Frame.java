@@ -1,11 +1,8 @@
 package cgol;
-<<<<<<< HEAD
+
 /*
  * FRAME
  */
-
-=======
->>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,11 +12,9 @@ import javax.swing.JLabel;
 public class Frame extends JFrame{
 	private Screen s;
 	private Simulation sim;
+	private float PAUSETIME = 1f;
+	private float tslu;
 	public Frame(){
-<<<<<<< HEAD
-=======
-				
->>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 		setExtendedState(MAXIMIZED_BOTH);
 	}
 	public void createScreen(){
@@ -27,6 +22,13 @@ public class Frame extends JFrame{
 		s = new Screen();
 		s.setBounds(0, 0, Main.width, Main.height);
 		add(s);
+	}
+	public void update(float tslf){
+		tslu += tslf;
+		if(tslu > PAUSETIME){
+			sim.update();
+			tslu = 0;
+		}
 	}
 	public void repaint(){
 		s.repaint();
