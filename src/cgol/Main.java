@@ -1,8 +1,11 @@
 package cgol;
+<<<<<<< HEAD
 /*
  * MAIN
  */
 
+=======
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 
 public class Main {
 	static int width;
@@ -12,6 +15,10 @@ public class Main {
 		f.setLocationRelativeTo(null);
 		f.setDefaultCloseOperation(3);
 		f.setVisible(true);
+<<<<<<< HEAD
+=======
+		//f.setUndecorated(true);
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 		f.setResizable(false);
 		
 		width = f.getWidth();
@@ -27,4 +34,8 @@ public class Main {
 			}
 		}
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 }

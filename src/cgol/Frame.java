@@ -1,8 +1,11 @@
 package cgol;
+<<<<<<< HEAD
 /*
  * FRAME
  */
 
+=======
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,6 +16,10 @@ public class Frame extends JFrame{
 	private Screen s;
 	private Simulation sim;
 	public Frame(){
+<<<<<<< HEAD
+=======
+				
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 		setExtendedState(MAXIMIZED_BOTH);
 	}
 	public void createScreen(){

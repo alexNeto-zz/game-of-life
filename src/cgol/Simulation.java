@@ -1,8 +1,11 @@
 package cgol;
+<<<<<<< HEAD
 /*
  * SIMULATOR
  */
 
+=======
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 
 import java.awt.Graphics;
 import java.util.Random;
@@ -14,6 +17,10 @@ public class Simulation {
 	private int height = Main.height/Cell.size;
 	public Simulation(){
 		random = new Random();
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 		cells = new Cell[width][height];
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
@@ -22,6 +29,7 @@ public class Simulation {
 			}
 		}
 	}
+<<<<<<< HEAD
 	public void update(){
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
@@ -52,11 +60,22 @@ public class Simulation {
 		}
 		
 	}
+=======
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 	public void draw(Graphics g){
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				cells[x][y].draw(g);
+<<<<<<< HEAD
 			}
 		}
 	}
+=======
+				
+			}
+			
+		}
+	}
+	
+>>>>>>> 1b465bf8fbde1718594efa8cdbf9eee5e6961275
 }
