@@ -23,6 +23,6 @@ public class Cell {
 		g.drawRect(x * size, y * size, size, size);
 		if(alive) g.setColor(Color.BLACK);
 		else g.setColor(Color.WHITE);
-		g.fillRect(x * size, y * size, size - 1, size - 1);
+		g.fillRect(x * size +1, y * size + 1, size - 1, size - 1);
 	}
 }

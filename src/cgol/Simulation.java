@@ -1,5 +1,6 @@
 package cgol;
 
+import java.awt.Graphics;
 import java.util.Random;
 
 public class Simulation {
@@ -16,6 +17,15 @@ public class Simulation {
 				cells[x][y] = new Cell(x, y);
 				cells[x][y].setAlive(random.nextBoolean());
 			}
+		}
+	}
+	public void draw(Graphics g){
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				cells[x][y].draw(g);
+				
+			}
+			
 		}
 	}
 	
