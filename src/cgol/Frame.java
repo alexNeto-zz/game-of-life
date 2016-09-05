@@ -7,13 +7,30 @@ package cgol;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Frame extends JFrame{
 	private Screen s;
 	private Simulation sim;
+
 	private float PAUSETIME = 0.05f;
+
 	private float tslu;
 	public Frame(){
+		setUndecorated(true);
+		
+		String input = JOptionPane.showInputDialog(this, "Cell size: ");
+		try {
+			Cell.size = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.exit(0);
+		}
+		input = JOptionPane.showInputDialog(this, "Pause time: ");
+		try {
+			PAUSETIME = Float.parseFloat(input);
+		} catch (Exception e) {
+			System.exit(0);
+		}
 		setExtendedState(MAXIMIZED_BOTH);
 	}
 	public void createScreen(){
