@@ -4,6 +4,7 @@ package cgol;
  */
 
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Random;
 
@@ -12,6 +13,7 @@ public class Simulation {
 	private Random random;
 	private int width = Main.width/Cell.size;
 	private int height = Main.height/Cell.size;
+	private int generation;
 	public Simulation(){
 		random = new Random();
 
@@ -24,6 +26,7 @@ public class Simulation {
 		}
 	}
 	public void update(){
+		generation++;
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
 				int mx = x - 1;
@@ -60,6 +63,8 @@ public class Simulation {
 
 			}
 		}
+		g.setFont(new Font("SansSerif", Font.BOLD, 25));
+		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
 	}
 			
 }
