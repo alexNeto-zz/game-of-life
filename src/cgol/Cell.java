@@ -12,7 +12,7 @@ public class Cell {
 	private int y;
 	private boolean alive;
 	private boolean nextround;
-
+	static boolean grid = true;
 	static int size = 10;
 	public Cell(int x, int y){
 		this.x = x;
@@ -31,10 +31,17 @@ public class Cell {
 		alive = nextround;
 	}
 	public void draw(Graphics g){
-		g.setColor(Color.BLACK);
-		g.drawRect(x * size, y * size, size, size);
-		if(alive) g.setColor(Color.BLACK);
-		else g.setColor(Color.WHITE);
-		g.fillRect(x * size +1, y * size + 1, size - 1, size - 1);
+		if(grid){
+			g.setColor(Color.BLACK);
+			g.drawRect(x * size, y * size, size, size);
+			if(alive) g.setColor(Color.BLACK);
+			else g.setColor(Color.WHITE);
+			g.fillRect(x * size +1, y * size + 1, size - 1, size - 1);
+		}
+		else{
+			if(alive) g.setColor(Color.BLACK);
+			else g.setColor(Color.WHITE);
+			g.fillRect(x * size, y * size, size, size);
+		}
 	}
 }
