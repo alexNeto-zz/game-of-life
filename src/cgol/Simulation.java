@@ -5,7 +5,10 @@ package cgol;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.awt.Color;
+=======
+>>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 =======
 >>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 import java.awt.Font;
@@ -24,8 +27,11 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 	private int height = Main.height/Cell.size;
 	private int generation;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private int button;
 	private boolean go;
+=======
+>>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 =======
 >>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 	public Simulation(){
@@ -40,6 +46,7 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 		}
 	}
 	public void update(){
+<<<<<<< HEAD
 <<<<<<< HEAD
 		if(go){
 			generation++;
@@ -65,6 +72,8 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 				}
 		
 =======
+=======
+>>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 		generation++;
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
@@ -101,6 +110,7 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		g.setColor(Color.BLUE);
 		g.setFont(new Font("SansSerif", Font.BOLD, 25));
@@ -177,6 +187,10 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		button = -1;
+=======
+		g.setFont(new Font("SansSerif", Font.BOLD, 25));
+		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
+>>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 =======
 		g.setFont(new Font("SansSerif", Font.BOLD, 25));
 		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
