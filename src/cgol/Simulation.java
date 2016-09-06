@@ -2,15 +2,7 @@ package cgol;
 /*
  * SIMULATOR
  */
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 import java.awt.Color;
-=======
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
-=======
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -26,14 +18,9 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 	private int width = Main.width/Cell.size;
 	private int height = Main.height/Cell.size;
 	private int generation;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	private int button;
 	private boolean go;
-=======
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
-=======
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
+
 	public Simulation(){
 		random = new Random();
 
@@ -46,8 +33,6 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 		}
 	}
 	public void update(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		if(go){
 			generation++;
 			for(int x = 0; x < width; x++){
@@ -70,35 +55,10 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 					if(alivecounter < 2 || alivecounter > 3) cells[x][y].setNextRound(false);
 					else if(alivecounter == 3) cells[x][y].setNextRound(true);
 				}
-		
-=======
-=======
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
-		generation++;
-		for(int x = 0; x < width; x++){
-			for(int y = 0; y < height; y++){
-				int mx = x - 1;
-				if(mx < 0) mx = width - 1;
-				int my = y - 1;
-				if(my < 0) my = height - 1;
-				int gx = (x + 1) % width;
-				int gy = (y + 1) % height;
-				int alivecounter = 0;
-				if(cells[mx][my].isAlive()) alivecounter++;
-				if(cells[mx][y].isAlive()) alivecounter++;
-				if(cells[mx][gy].isAlive()) alivecounter++;
-				if(cells[x][my].isAlive()) alivecounter++;
-				if(cells[x][gy].isAlive()) alivecounter++;
-				if(cells[gx][my].isAlive()) alivecounter++;
-				if(cells[gx][y].isAlive()) alivecounter++;
-				if(cells[gx][gy].isAlive()) alivecounter++;
-				if(alivecounter < 2 || alivecounter > 3) cells[x][y].setNextRound(false);
-				else if(alivecounter == 3) cells[x][y].setNextRound(true);
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
-			}
-			for(int x = 0; x < width; x++){
-				for(int y = 0; y < height; y++){
-					cells[x][y].nextround();
+				for(x = 0; x < width; x++){
+					for(int y = 0; y < height; y++){
+						cells[x][y].nextround();
+					}
 				}
 			}
 		}
@@ -107,18 +67,11 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				cells[x][y].draw(g);
-
 			}
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		g.setColor(Color.BLUE);
 		g.setFont(new Font("SansSerif", Font.BOLD, 25));
 		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
-	}
-	@Override
-	public void keyPressed(KeyEvent e) {
-				
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -143,12 +96,7 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 		if(e.getKeyCode() == KeyEvent.VK_SPACE){
 			if(go) go = false;
 			else go = true;
-		}
-			
-	}
-	@Override
-	public void keyTyped(KeyEvent e) {
-				
+		}		
 	}
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -169,32 +117,38 @@ public class Simulation implements KeyListener, MouseListener, MouseMotionListen
 		} 
 	}
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		
-	}
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		
-	}
-	@Override
-	public void mouseExited(MouseEvent e) {
-		
-	}
-	@Override
 	public void mousePressed(MouseEvent e) {
 		button = e.getButton();
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		button = -1;
-=======
-		g.setFont(new Font("SansSerif", Font.BOLD, 25));
-		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
-=======
-		g.setFont(new Font("SansSerif", Font.BOLD, 25));
-		g.drawString("" + generation, 10, 10 + g.getFont().getSize());
->>>>>>> cf0df7cecf4df6297664666bb7fbda6ef5f4dfbe
+		//g.setFont(new Font("SansSerif", Font.BOLD, 25));
+		//g.drawString("" + generation, 10, 10 + g.getFont().getSize());
 	}
-			
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

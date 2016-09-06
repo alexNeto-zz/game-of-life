@@ -10,13 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Frame extends JFrame{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
 	private Screen s;
 	private Simulation sim;
 
@@ -60,11 +53,6 @@ public class Frame extends JFrame{
 		s.repaint();
 	}
 	private class Screen extends JLabel{
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
 		@Override
 		public void paintComponent(Graphics g){
 			super.paintComponent(g);

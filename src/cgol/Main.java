@@ -4,20 +4,20 @@ package cgol;
  */
 
 public class Main {
-	static int width;
-	static int height;
+	//static int width;
+	//static int height;
 	public static void main(String[] args) {
 		Frame f = new Frame();
-		f.setLocationRelativeTo(null);
 		f.setDefaultCloseOperation(3);
+		f.setUndecorated(true);
 		f.setVisible(true);
-
+		f.setLocationRelativeTo(null);
 		f.setResizable(false);
 		
-		width = f.getWidth();
-		height = f.getHeight();
-		f.createScreen();
-		long lastFrame = System.currentTimeMillis();
+		//width = f.getWidth();
+		//height = f.getHeight();
+		//f.createScreen();
+		/*long lastFrame = System.currentTimeMillis();
 		while(true){
 			long thisFrame = System.currentTimeMillis();
 			float tslf = (float) ((thisFrame - lastFrame) / 1000.0);
@@ -29,6 +29,6 @@ public class Main {
 			}catch(InterruptedException e){
 				e.printStackTrace();
 			}
-		}
+		}*/
 	}
 }
