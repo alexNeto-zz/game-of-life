@@ -1,10 +1,7 @@
 package cgol;
 
-/*
- * FRAME
- */
-
 import java.awt.Graphics;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -12,20 +9,17 @@ import javax.swing.JOptionPane;
 public class Frame extends JFrame{
 	private Screen s;
 	private Simulation sim;
-
-	private float PAUSETIME = 0.05f;
-
 	private float tslu;
+	private float  PAUSETIME = 0.1f;
 	public Frame(){
 		setUndecorated(true);
-		
 		String input = JOptionPane.showInputDialog(this, "Cell size: ");
 		try {
 			Cell.size = Integer.parseInt(input);
 		} catch (Exception e) {
 			System.exit(0);
 		}
-		input = JOptionPane.showInputDialog(this, "Pause time: ");
+		input = JOptionPane.showInputDialog(this, "Pausetime: ");
 		try {
 			PAUSETIME = Float.parseFloat(input);
 		} catch (Exception e) {
@@ -34,10 +28,8 @@ public class Frame extends JFrame{
 		setExtendedState(MAXIMIZED_BOTH);
 	}
 	public void createScreen(){
-		sim = new Simulation();
 		addKeyListener(sim);
-		addMouseListener(sim);
-		addMouseMotionListener(sim);
+		sim = new Simulation();
 		s = new Screen();
 		s.setBounds(0, 0, Main.width, Main.height);
 		add(s);
@@ -59,4 +51,5 @@ public class Frame extends JFrame{
 			sim.draw(g);
 		}
 	}
+	
 }
