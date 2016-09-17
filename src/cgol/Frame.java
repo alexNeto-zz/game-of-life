@@ -29,6 +29,8 @@ public class Frame extends JFrame{
 	}
 	public void createScreen(){
 		addKeyListener(sim);
+		addMouseMotionListener(sim);
+		addMouseListener(sim);
 		sim = new Simulation();
 		s = new Screen();
 		s.setBounds(0, 0, Main.width, Main.height);
