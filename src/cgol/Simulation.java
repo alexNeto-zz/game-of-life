@@ -72,6 +72,13 @@ public class Simulation implements KeyListener{
 			if(Cell.grid) Cell.grid = false;
 			else Cell.grid = true;
 		}
+		if(e.getKeyCode() == KeyEvent.VK_R){
+			for (int x = 0; x < width; x++) {
+				for (int y = 0; y < height; y++) {
+					cells[x][y].setAlive(random.nextBoolean());
+				}
+			}
+		}
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
