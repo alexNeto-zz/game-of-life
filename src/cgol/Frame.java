@@ -1,57 +1,50 @@
 package cgol;
 
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+public class Frame extends JFrame {
+	public static final int WIDTH = 800;
+	public static final int HEIGHT = 500;
 
-public class Frame extends JFrame{
-	private Screen s;
-	private Simulation sim;
-	private float tslu;
-	private float  PAUSETIME = 0.1f;
-	public Frame(){
-		setUndecorated(true);
-		String input = JOptionPane.showInputDialog(this, "Cell size: ");
-		try {
-			Cell.size = Integer.parseInt(input);
-		} catch (Exception e) {
-			System.exit(0);
-		}
-		input = JOptionPane.showInputDialog(this, "Pausetime: ");
-		try {
-			PAUSETIME = Float.parseFloat(input);
-		} catch (Exception e) {
-			System.exit(0);
-		}
-		setExtendedState(MAXIMIZED_BOTH);
+	private final static int REFRESH_RATE = 30; 
+	private final static int MILLIS = 1000/REFRESH_RATE;
+
+	private Screen screen;
+	private Simulation simulation;
+
+	public Frame() {
+		setLayout(new BorderLayout());
+
+		simulation = new Simulation();
+
+		screen = new Screen();
+		add(screen, BorderLayout.CENTER);
 	}
-	public void createScreen(){
-		addKeyListener(sim);
-		addMouseMotionListener(sim);
-		addMouseListener(sim);
-		sim = new Simulation();
-		s = new Screen();
-		s.setBounds(0, 0, Main.width, Main.height);
-		add(s);
-	}
-	public void update(float tslf){
-		tslu += tslf;
-		if(tslu > PAUSETIME){
-			sim.update();
-			tslu = 0;
+
+	public void startUpdate() {
+		while(true) {
+			long before = System.currentTimeMillis();
+			simulation.update();
+
+			screen.repaint();
+			long diff = MILLIS - (System.currentTimeMillis() - before);
+
+			try {
+				if(diff > 0) Thread.sleep(diff);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
-	public void repaint(){
-		s.repaint();
-	}
-	private class Screen extends JLabel{
+
+	public class Screen extends JLabel {
 		@Override
-		public void paintComponent(Graphics g){
-			super.paintComponent(g);
-			sim.draw(g);
+		protected void paintComponent(Graphics g) {
+			g.setColor(Color.WHITE);
+			g.fillRect(0, 0, getWidth(), getHeight());
+			simulation.draw(g);
 		}
 	}
-	
+
 }
